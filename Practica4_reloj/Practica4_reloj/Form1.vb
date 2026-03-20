@@ -1,18 +1,36 @@
 ﻿Public Class Form1
+    Dim formato As Boolean = True
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' inicia los timers
         Timer1.Start()
         Timer2.Start()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        ' crear una variable, le asigna un valor, el valor es la fecha del dia de hoy convertida a string en el formato de "dd 'de' MMMM 'del' yyyy"
+        ' "dd" es el numero del dia, "MMMM" es el mes del año y "yyyy" el año
         Dim Date_o = DateTime.Now.ToString("dd 'de' MMMM 'del' yyyy")
         Dim Day_o = DateTime.Now.ToString("dddd")
-        Dim Time_o = DateTime.Now.ToString("HH:mm")
+        Dim Time_o = ""
 
-        Dim Time_mod = Time_o.Split(":")
+        ' Este es el formato de 24 horas
+        If formato = True Then
+            ' "08:06:56:12"
+            Time_o = DateTime.Now.ToString("HH:mm:ss")
+        ElseIf formato = False Then
+            Time_o = DateTime.Now.ToString("hh:mm:ss")
+            ' HH es 24 horas y hh es de 12 horas
+        End If
 
-        horas.Text = Time_mod(0)
-        minutos.Text = Time_mod(1)
+        Dim time_mod = Time_o.Split(":")
+        ' time_mod(0) = "08"
+        ' time mod(1) = "06"
+        ' time_mod(2) = "56"
+        ' time_mod(3) = "12"
+        horas.Text = time_mod(0)
+        minutos.Text = time_mod(1)
+        segundos.Text = time_mod(2)
         dia.Text = Day_o
         fecha.Text = Date_o
     End Sub
@@ -35,6 +53,57 @@
             Panel1.Visible = True
         ElseIf Panel1.Visible = True Then
             Panel1.Visible = False
+        End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Dim color_texto As String = ComboBox1.SelectedItem.ToString()
+        If color_texto = "Blanco" Then
+            horas.ForeColor = Color.White
+            minutos.ForeColor = Color.White
+            Label1.ForeColor = Color.White
+            dia.ForeColor = Color.White
+            fecha.ForeColor = Color.White
+
+        ElseIf color_texto = "Rojo" Then
+            horas.ForeColor = Color.Red
+            minutos.ForeColor = Color.Red
+            Label1.ForeColor = Color.Red
+            dia.ForeColor = Color.Red
+            fecha.ForeColor = Color.Red
+
+        ElseIf color_texto = "Azul" Then
+            horas.ForeColor = Color.Blue
+            minutos.ForeColor = Color.Blue
+            Label1.ForeColor = Color.Blue
+            dia.ForeColor = Color.Blue
+            fecha.ForeColor = Color.Blue
+
+        ElseIf color_texto = "Amarillo" Then
+            horas.ForeColor = Color.Yellow
+            minutos.ForeColor = Color.Yellow
+            Label1.ForeColor = Color.Yellow
+            dia.ForeColor = Color.Yellow
+            fecha.ForeColor = Color.Yellow
+
+        ElseIf color_texto = "Verde" Then
+            horas.ForeColor = Color.Green
+            minutos.ForeColor = Color.Green
+            Label1.ForeColor = Color.Green
+            dia.ForeColor = Color.Green
+            fecha.ForeColor = Color.Green
+
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If formato = True Then
+            Button1.Text = "12h"
+            formato = False
+
+        ElseIf formato = False Then
+            Button1.Text = "24h"
+            formato = True
         End If
     End Sub
 End Class

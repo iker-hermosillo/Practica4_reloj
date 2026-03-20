@@ -31,10 +31,12 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.segundos = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +48,7 @@ Partial Class Form1
         Me.horas.BackColor = System.Drawing.Color.Black
         Me.horas.Font = New System.Drawing.Font("Microsoft YaHei", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.horas.ForeColor = System.Drawing.Color.Red
-        Me.horas.Location = New System.Drawing.Point(209, 165)
+        Me.horas.Location = New System.Drawing.Point(64, 165)
         Me.horas.Name = "horas"
         Me.horas.Size = New System.Drawing.Size(115, 86)
         Me.horas.TabIndex = 0
@@ -70,7 +72,7 @@ Partial Class Form1
         Me.minutos.BackColor = System.Drawing.Color.Black
         Me.minutos.Font = New System.Drawing.Font("Microsoft YaHei", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.minutos.ForeColor = System.Drawing.Color.Red
-        Me.minutos.Location = New System.Drawing.Point(64, 165)
+        Me.minutos.Location = New System.Drawing.Point(202, 165)
         Me.minutos.Name = "minutos"
         Me.minutos.Size = New System.Drawing.Size(115, 86)
         Me.minutos.TabIndex = 2
@@ -82,7 +84,7 @@ Partial Class Form1
         Me.dia.BackColor = System.Drawing.Color.Black
         Me.dia.Font = New System.Drawing.Font("Microsoft YaHei", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dia.ForeColor = System.Drawing.Color.Red
-        Me.dia.Location = New System.Drawing.Point(132, 262)
+        Me.dia.Location = New System.Drawing.Point(130, 251)
         Me.dia.Name = "dia"
         Me.dia.Size = New System.Drawing.Size(123, 48)
         Me.dia.TabIndex = 3
@@ -94,7 +96,7 @@ Partial Class Form1
         Me.fecha.BackColor = System.Drawing.Color.Black
         Me.fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fecha.ForeColor = System.Drawing.Color.Red
-        Me.fecha.Location = New System.Drawing.Point(69, 310)
+        Me.fecha.Location = New System.Drawing.Point(74, 308)
         Me.fecha.Name = "fecha"
         Me.fecha.Size = New System.Drawing.Size(243, 29)
         Me.fecha.TabIndex = 4
@@ -109,13 +111,23 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(58, 95)
+        Me.Panel1.Location = New System.Drawing.Point(60, 95)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(266, 268)
         Me.Panel1.TabIndex = 6
         Me.Panel1.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(23, 55)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(54, 52)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -126,15 +138,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(124, 20)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Configuraciones"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(23, 55)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(54, 52)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'PictureBox2
         '
@@ -156,13 +159,35 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Blanco", "Rojo", "Azul", "Amarillo", "Verde"})
+        Me.ComboBox1.Location = New System.Drawing.Point(67, 176)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 2
+        '
+        'segundos
+        '
+        Me.segundos.AutoSize = True
+        Me.segundos.BackColor = System.Drawing.Color.Black
+        Me.segundos.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.segundos.ForeColor = System.Drawing.Color.Red
+        Me.segundos.Location = New System.Drawing.Point(257, 145)
+        Me.segundos.Name = "segundos"
+        Me.segundos.Size = New System.Drawing.Size(44, 31)
+        Me.segundos.TabIndex = 8
+        Me.segundos.Text = "00"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(395, 525)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.ClientSize = New System.Drawing.Size(394, 525)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.segundos)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.fecha)
         Me.Controls.Add(Me.dia)
         Me.Controls.Add(Me.minutos)
@@ -192,4 +217,6 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents segundos As Label
 End Class
