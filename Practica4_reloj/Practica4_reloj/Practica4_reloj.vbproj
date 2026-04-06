@@ -128,5 +128,8 @@
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-03-13 082444.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1207429.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

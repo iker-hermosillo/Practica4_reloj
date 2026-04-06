@@ -22,6 +22,11 @@ Practica4_reloj
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:Practica4_reloj.My.Resources.Resources._1207429">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Practica4_reloj.My.Resources.Resources.Captura_de_pantalla_2026_03_13_082444">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
