@@ -67,6 +67,7 @@
             Label1.ForeColor = Color.White
             dia.ForeColor = Color.White
             fecha.ForeColor = Color.White
+            segundos.ForeColor = Color.White
 
         ElseIf color_texto = "Rojo" Then
             horas.ForeColor = Color.Red
@@ -74,6 +75,7 @@
             Label1.ForeColor = Color.Red
             dia.ForeColor = Color.Red
             fecha.ForeColor = Color.Red
+            segundos.ForeColor = Color.Red
 
         ElseIf color_texto = "Azul" Then
             horas.ForeColor = Color.Blue
@@ -81,6 +83,7 @@
             Label1.ForeColor = Color.Blue
             dia.ForeColor = Color.Blue
             fecha.ForeColor = Color.Blue
+            segundos.ForeColor = Color.Blue
 
         ElseIf color_texto = "Amarillo" Then
             horas.ForeColor = Color.Yellow
@@ -88,6 +91,7 @@
             Label1.ForeColor = Color.Yellow
             dia.ForeColor = Color.Yellow
             fecha.ForeColor = Color.Yellow
+            segundos.ForeColor = Color.Yellow
 
         ElseIf color_texto = "Verde" Then
             horas.ForeColor = Color.Green
@@ -95,6 +99,7 @@
             Label1.ForeColor = Color.Green
             dia.ForeColor = Color.Green
             fecha.ForeColor = Color.Green
+            segundos.ForeColor = Color.Green
 
         End If
     End Sub
@@ -132,14 +137,18 @@
     End Sub
 
     Private Sub Reset_Click(sender As Object, e As EventArgs) Handles Reset.Click
-        tiempo_crono = 0
+        elapsed = TimeSpan.Zero
         Timer3.Enabled = False
-        Tiempo.Text = "0"
+        Tiempo.Text = "00:00:00.00"
+        boton_start = False
+        Start.Text = "Start"
+        'se reinicia a cero horas
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
-        tiempo_crono = tiempo_crono + 1
-        Tiempo.Text = tiempo_crono.ToString()
+        Dim current = elapsed + (DateTime.Now - startTime)
+        Tiempo.Text = current.ToString("hh\:mm\:ss\.ff")
+
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
@@ -147,6 +156,14 @@
             Panel2.Visible = True
         ElseIf Panel2.Visible = True Then
             Panel2.Visible = False
+        End If
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        If Panel3.Visible = True Then
+            Panel3.Visible = False
+        ElseIf Panel3.Visible = False Then
+            Panel3.Visible = True
         End If
     End Sub
 End Class

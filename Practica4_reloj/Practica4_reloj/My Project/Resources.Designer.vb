@@ -73,6 +73,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property arena() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("arena", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Captura_de_pantalla_2026_03_13_082444() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Captura de pantalla 2026-03-13 082444", resourceCulture)
