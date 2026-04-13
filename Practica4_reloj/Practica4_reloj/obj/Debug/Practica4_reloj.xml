@@ -27,6 +27,11 @@ Practica4_reloj
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Practica4_reloj.My.Resources.Resources.arena">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Practica4_reloj.My.Resources.Resources.Captura_de_pantalla_2026_03_13_082444">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

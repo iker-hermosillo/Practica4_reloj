@@ -46,10 +46,13 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.start_button = New System.Windows.Forms.Button()
+        Me.onemin = New System.Windows.Forms.Button()
+        Me.reset_button = New System.Windows.Forms.Button()
+        Me.fivemin = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,8 +277,10 @@ Partial Class Form1
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Button3)
-        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.start_button)
+        Me.Panel3.Controls.Add(Me.onemin)
+        Me.Panel3.Controls.Add(Me.reset_button)
+        Me.Panel3.Controls.Add(Me.fivemin)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Location = New System.Drawing.Point(50, 99)
@@ -284,43 +289,64 @@ Partial Class Form1
         Me.Panel3.TabIndex = 12
         Me.Panel3.Visible = False
         '
-        'Label4
+        'start_button
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(74, 52)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(144, 25)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Temporizador"
+        Me.start_button.Location = New System.Drawing.Point(54, 183)
+        Me.start_button.Name = "start_button"
+        Me.start_button.Size = New System.Drawing.Size(75, 23)
+        Me.start_button.TabIndex = 7
+        Me.start_button.Text = "Start"
+        Me.start_button.UseVisualStyleBackColor = True
+        '
+        'onemin
+        '
+        Me.onemin.Location = New System.Drawing.Point(54, 141)
+        Me.onemin.Name = "onemin"
+        Me.onemin.Size = New System.Drawing.Size(75, 23)
+        Me.onemin.TabIndex = 6
+        Me.onemin.Text = "+1 min"
+        Me.onemin.UseVisualStyleBackColor = True
+        '
+        'reset_button
+        '
+        Me.reset_button.Location = New System.Drawing.Point(153, 183)
+        Me.reset_button.Name = "reset_button"
+        Me.reset_button.Size = New System.Drawing.Size(75, 23)
+        Me.reset_button.TabIndex = 5
+        Me.reset_button.Text = "Reset"
+        Me.reset_button.UseVisualStyleBackColor = True
+        '
+        'fivemin
+        '
+        Me.fivemin.Location = New System.Drawing.Point(153, 141)
+        Me.fivemin.Name = "fivemin"
+        Me.fivemin.Size = New System.Drawing.Size(75, 23)
+        Me.fivemin.TabIndex = 4
+        Me.fivemin.Text = "+5 min"
+        Me.fivemin.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(81, 110)
+        Me.Label5.Location = New System.Drawing.Point(86, 76)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(117, 42)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "00:00"
         '
-        'Button2
+        'Label4
         '
-        Me.Button2.Location = New System.Drawing.Point(54, 183)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "5 min"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(72, 37)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(144, 25)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Temporizador"
         '
-        'Button3
+        'Timer4
         '
-        Me.Button3.Location = New System.Drawing.Point(153, 183)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Stop"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -379,8 +405,11 @@ Partial Class Form1
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents reset_button As Button
+    Friend WithEvents fivemin As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents start_button As Button
+    Friend WithEvents onemin As Button
+    Friend WithEvents Timer4 As Timer
 End Class
